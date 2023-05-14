@@ -1,0 +1,52 @@
+---
+import Button from './Button.astro'
+import Card from './Card.astro'
+---
+
+<section class='mt-12 p-12 relative' id='regalo'>
+  <Card
+    classes='flex w-[250px] p-8 border-violet-200 rounded justify-center items-center relative h-[400px] lg:w-[800px] lg:h-[400px] aspect-9/8 lg:aspect-[16/9] border-2'>
+    <div
+      id='blur'
+      class='absolute w-full h-full bg-black/5 inset-0 rounded backdrop-blur-xl z-50 flex items-center justify-center transition-opacity duration-1000'>
+      <Button class='text-white' id='reveal-button'>
+        Presiona el botón para revelar tu regalo
+      </Button>
+    </div>
+
+    <div>
+      <p class='font-bold text-justify text-gray-600'>
+        Este es un vale valido por <span class='text-gradient text-3xl'
+          >100$</span
+        > ,por ser la mejor mamá del mundo, para canjearlo tienes que tomarle una captura
+        de pantalla y pasarsela a Marco
+      </p>
+      <img src='/regalo.svg' />
+    </div>
+  </Card>
+</section>
+<script
+  is:inline
+  src='https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js'
+></script>
+<script type='module'>
+  const $button = document.getElementById('reveal-button')
+  const $blurDiv = document.getElementById('blur')
+
+  $button.addEventListener('click', () => {
+    $blurDiv.style.opacity = '0'
+    confetti({
+      particleCount: 200,
+      spread: 50
+    })
+  })
+</script>
+<style>
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>

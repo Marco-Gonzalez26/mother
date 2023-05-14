@@ -1,81 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Button from '../components/Button.astro'
+import Regalo from '../components/Regalo.astro'
+import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title='¡Feliz dia de la Madre!'>
+  <main
+    class='max-w-3xl m-auto p-6 flex flex-col justify-center items-center gap-5'>
+    <h1 class='text-gradient text-3xl text-center lg:text-6xl font-extrabold'>
+      ¡Feliz dia de la madre a la mejor mamá del mundo!
+    </h1>
+
+    <p class='text-justify text-xl font-semibold text-indigo-600 lg:text-2xl'>
+      Bueno esto es una pequeña pagina para ti. Gracias a que tu si me apoyas en
+      esto, pues te mereces que te haga algo.
+    </p>
+
+    <p class='text-justify text-xl font-semibold text-violet-600 lg:text-2xl'>
+      Primero que todo, te quiero agradecer por tantas cosas que haz aguantado
+      por José y por mi
+    </p>
+    <p class='text-justify text-xl font-semibold text-blue-600 lg:text-2xl'>
+      Segundo pues quiero decirte que te amo con todo mi vida, yo se que no lo
+      digo, pero trato de expresarlo de otras maneras, esta es un ejemplo
+      bastante bueno
+    </p>
+    <p class='text-justify text-xl font-semibold text-cyan-600 lg:text-2xl'>
+      Y tercero pero no menos importante esta el ragalo para la mejor mama del
+      mundo
+    </p>
+
+    <Button>
+      <a class='w-full text-white cursor-pointer font-semibold' href='#regalo'
+        >Presiona aqui para ir a tu regalo</a
+      >
+    </Button>
+
+    <Regalo />
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
 </style>
